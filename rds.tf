@@ -10,8 +10,8 @@ resource "aws_db_instance" "postgres" {
   engine                  = "postgres"
   engine_version          = "14.7"
   instance_class          = var.db_instance_class
-  username                = aws_secretsmanager_secret.db_username_secret_new3.name
-  password                = aws_secretsmanager_secret.db_password_secret_new3.name
+  username                = aws_secretsmanager_secret.unique_username_secret.name
+  password                = aws_secretsmanager_secret.unique_password_secret.name
 
   # username                  = aws_secretsmanager_secret_version.db_username_version_new1.arn
   # password                  = aws_secretsmanager_secret_version.db_password_version_new1.arn
